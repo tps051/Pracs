@@ -1,12 +1,16 @@
 #include <ctime>
 #include <iostream>
+#include <stdlib.h>
+#include <algorithm>
+#include <locale.h>
 using namespace std;
 
 double* delanie_massiva(int *razmer) {
-	if (*razmer != 0) {
+	if (*razmer = 0) {
 		return 0;
 	}
 	else {
+		cout << "Введите желаемый размер массива: ";
 		cin >> *razmer;
 		double *mass = new double[*razmer];
 		return mass;
@@ -20,7 +24,7 @@ double* zapolnenie(int razmer, double *array) {
 }
 double* vipisivanie(int razmer, double *array) {
 	for (int i = 0; i < razmer; i++) {
-		cout << array[i];
+		cout <<"a["<<i<<"]="<< array[i]<<endl;
 	}
 	return array;
 }
@@ -43,18 +47,21 @@ int main()
 	srand(time(0));
 	double *mass;
 	double kek;
+	int str,stolb;
 	mass = &kek;
 	int razmer = 0;
 	int zadanie;
 	bool pravda = true;
-	int a;
+	int a,q;
 	int** mass3 = new int*[10];
 	int* mass2 = new int[12];
+	cout << "Выберите вариант: ";
 	cin >> zadanie;
 	switch (zadanie) {
 	case 1:
+	cout << "Выберите операцию: \n 1)Выделить память \n 2)Заполнить массив \n 3)Вывести массив \n 4)Удалить массив \n 5)Выйти " << endl;
 		while (pravda) {
-			cout << "Выберите вариант: " << endl;
+			cout << "Операция №: ";
 			cin >> a;
 			switch (a) {
 			case 1:
@@ -83,18 +90,24 @@ int main()
 		}
 		cout << endl;
 		mass2 = perestanovka(mass2);
+		cout << "Swap: " << endl;
 		for (int i = 0; i < 12; i++) {
 			cout << mass2[i] << " ";
 		}
+		cout << endl;
 		break;
 	case 3:
-		for (int i = 0; i < 10; i++) {
-			mass3[i] = new int[10];
+		cout << "Введите кол-во строк: ";
+		cin >> str;
+		cout << "Введите кол-во столбцов: ";
+		cin >> stolb;
+		for (int i = 0; i < str; i++) {
+			mass3[i] = new int[str];
 		}
-		for (int i = 0; i < 10; i++) {
-			for (int q = 0; q < 10; q++) {
-				mass3[i][q] = rand() % 40 + 10;
-				cout << mass3[i][q] << " ";
+		for (int i = 0; i < str; i++) {
+			for (int l = 0; l < stolb; l++) {
+				mass3[i][l] = rand() % 40 + 10;
+				cout << mass3[i][l] << " ";
 			}
 			cout << endl;
 		}
