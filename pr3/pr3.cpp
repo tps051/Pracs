@@ -2,7 +2,6 @@
 #include <string>
 #include <locale.h>
 using namespace std;
-
 struct book {
 	int date;
 	int str;
@@ -48,7 +47,6 @@ int main() {
 	switch (a)
 	{
 	case 1:
-
 		cout << "Имя автора: " << endl;
 		cin.get();
 		getline(cin, kek.avtor);
@@ -75,7 +73,6 @@ int main() {
 		}
 		break;
 	case 3:
-
 		cout << "Марка авто: " << endl;
 		cin.get();
 		getline(cin, pocar.marka);
@@ -119,5 +116,4 @@ int main() {
 		}
 		break;
 	}
-
 }
